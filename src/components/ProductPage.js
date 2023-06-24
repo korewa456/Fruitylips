@@ -5,6 +5,7 @@ import RemoveIcon from "@mui/icons-material/Remove";
 import AddIcon from "@mui/icons-material/Add";
 import { useDispatch, useSelector } from "react-redux";
 import { addItem, updateAmount, selectItems } from "../app/counterSlice";
+import { Toaster, toast } from "react-hot-toast";
 
 export default function ProductPage({ item }) {
   const [index, setIndex] = useState(0);
@@ -34,10 +35,13 @@ export default function ProductPage({ item }) {
       };
       dispatch(addItem(newItem));
     }
+
+    toast.success(`Successfully added ${amount} ${item.title}!`);
   };
 
   return (
     <>
+      <Toaster />
       <section className="max-w-7xl h-screen lg:h-auto mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10 lg:place-items-center lg:py-20">
         <article className="lg:block">
           <img
@@ -102,8 +106,11 @@ export default function ProductPage({ item }) {
               </li>
             </ul>
             <div className="lg:flex-1">
-              <button className="flex items-center justify-center gap-4 bg-orange-500 py-2 px-4 text-white font-bold rounded-lg shadow mt-5 w-full lg:mt-0 hover:bg-orange-600 transition-all duration-200">
-                <ShoppingCartIcon onClick={handleAddToCart} /> Add to cart
+              <button
+                onClick={handleAddToCart}
+                className="flex items-center justify-center gap-4 bg-orange-500 py-2 px-4 text-white font-bold rounded-lg shadow mt-5 w-full lg:mt-0 hover:bg-orange-600 transition-all duration-200"
+              >
+                <ShoppingCartIcon /> Add to cart
               </button>
             </div>
           </div>

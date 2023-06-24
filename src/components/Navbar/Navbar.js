@@ -15,9 +15,9 @@ export default function Navbar({ handleNavClick }) {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div className="fixed w-full bg-white z-10 shadow-sm font-semibold">
+    <div className="fixed w-full bg-white z-10  font-semibold">
       <Container>
-        <div className="flex flex-row items-center justify-between gap-7">
+        <div className="flex flex-row items-center justify-between gap-4">
           <div className="flex flex-row items-center my-6 gap-2">
             <div
               className="lg:hidden cursor-pointer border-2 border-white hover:border-slate-300"

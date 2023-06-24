@@ -20,7 +20,7 @@ export default function ShoppingCart() {
       <div>
         <div className="flex flex-col gap-6 shadow-md border-4 p-10">
           <div className="flex flex-col gap-2">
-            <div className="my-2">Contact</div>
+            <div className="my-2 font-bold text-lg">Contact</div>
             <Input className="w-full h-14" placeholder="Email" />
             <div className="flex items-center gap-2">
               <input type="checkbox" />
@@ -28,7 +28,7 @@ export default function ShoppingCart() {
             </div>
           </div>
           <div>
-            <div className="my-2">Shipping Address</div>
+            <div className="my-2 font-bold text-lg">Shipping Address</div>
             <div className="flex flex-col gap-4">
               <Input className="w-full h-14" placeholder="Country" />
               <div className="flex flex-row gap-4">
@@ -59,7 +59,11 @@ export default function ShoppingCart() {
       <div className="flex flex-col gap-6 shadow-md border-4 p-10">
         <div>
           <div
-            className={items.length === 0 ? "flex justify-center" : "hidden"}
+            className={
+              items.length === 0
+                ? "flex justify-center font-bold text-lg"
+                : "hidden"
+            }
           >
             Your Cart is Empty
           </div>
