@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Container from "../Container";
 import logo from "../../logo.png";
 import MenuItem from "./MenuItem";
@@ -12,19 +12,44 @@ import { useDispatch } from "react-redux";
 export default function Navbar({ handleNavClick }) {
   const counter = useSelector(selectItems);
 
+  const [isOpen, setIsOpen] = useState(false);
+
   return (
     <div className="fixed w-full bg-white z-10 shadow-sm font-semibold">
       <Container>
-        <div className="flex flex-row items-center justify-between gap-3">
+        <div className="flex flex-row items-center justify-between gap-7">
           <div className="flex flex-row items-center my-6 gap-2">
-            <div className="lg:hidden">
+            <div
+              className="lg:hidden cursor-pointer border-2 border-white hover:border-slate-300"
+              onClick={() => setIsOpen(!isOpen)}
+            >
               <MenuIcon fontSize="large" />
             </div>
-
-            <img className="block cursor-pointer " src={logo} alt="Logo" />
+            <Link to="/">
+              <img className="block cursor-pointer " src={logo} alt="Logo" />
+            </Link>
+            <nav className={!isOpen && "hidden"}>
+              <ul className="">
+                <Link to="/">
+                  <MenuItem item="Bananas" />
+                </Link>
+                <Link to="/coconut">
+                  <MenuItem item="Coconut" />
+                </Link>
+                <Link to="/strawberry">
+                  <MenuItem item="Strawberry" />
+                </Link>
+                <Link to="/blackberry">
+                  <MenuItem item="Blackberry" />
+                </Link>
+                <Link to="/kiwi">
+                  <MenuItem item="Kiwi" />
+                </Link>
+              </ul>
+            </nav>
           </div>
 
-          <div className="hidden lg:flex">
+          <div className="hidden lg:flex lg:w-full lg:justify-between">
             <Link to="/">
               <MenuItem item="Bananas" />
             </Link>

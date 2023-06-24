@@ -33,7 +33,9 @@ function App() {
               <Navbar />
               <div className="pt-28">
                 <FruitPage item={items[1]} />
-                <Footer />
+                <div className="hidden md:block">
+                  <Footer />
+                </div>
               </div>
             </div>
           }
@@ -45,7 +47,9 @@ function App() {
               <Navbar />
               <div className="pt-28">
                 <FruitPage item={items[2]} />
-                <Footer />
+                <div className="hidden md:block">
+                  <Footer />
+                </div>
               </div>
             </div>
           }
@@ -57,7 +61,9 @@ function App() {
               <Navbar />
               <div className="pt-28">
                 <FruitPage item={items[3]} />
-                <Footer />
+                <div className="hidden md:block">
+                  <Footer />
+                </div>
               </div>
             </div>
           }
@@ -69,7 +75,9 @@ function App() {
               <Navbar />
               <div className="pt-28">
                 <FruitPage item={items[4]} />
-                <Footer />
+                <div className="hidden md:block">
+                  <Footer />
+                </div>
               </div>
             </div>
           }
@@ -83,7 +91,9 @@ function App() {
                 <div className="pt-28">
                   <ProductPage item={item} />
                   <div className="hidden md:block">
-                    <Footer />
+                    <div className="hidden md:block">
+                      <Footer />
+                    </div>
                   </div>
                 </div>
               </div>
@@ -97,7 +107,6 @@ function App() {
               <Navbar />
               <div className="pt-28">
                 <ShoppingCart />
-                <Footer />
               </div>
             </div>
           }
